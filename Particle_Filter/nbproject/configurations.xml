@@ -34,7 +34,12 @@
                    displayName="Important Files"
                    projectFiles="false"
                    kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>../data/control_data.txt</itemPath>
+      <itemPath>../data/gt_data.txt</itemPath>
       <itemPath>nbproject/private/launcher.properties</itemPath>
+      <itemPath>../data/map_data.txt</itemPath>
+      <itemPath>../data/observation/observations_000001.txt</itemPath>
+      <itemPath>../data/observation/observations_002295.txt</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
@@ -62,6 +67,11 @@
           <buildCommand>./build.sh</buildCommand>
           <cleanCommand>./clean.sh</cleanCommand>
           <executablePath>../build/particle_filter</executablePath>
+          <cTool>
+            <incDir>
+              <pElem>../build/CMakeFiles/CMakeTmp</pElem>
+            </incDir>
+          </cTool>
         </makeTool>
         <preBuild>
           <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
@@ -71,21 +81,18 @@
       <item path="../build/CMakeFiles/3.5.1/CompilerIdC/CMakeCCompilerId.c"
             ex="false"
             tool="0"
-            flavor2="0">
+            flavor2="2">
       </item>
       <item path="../build/CMakeFiles/3.5.1/CompilerIdCXX/CMakeCXXCompilerId.cpp"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
       </item>
       <item path="../build/CMakeFiles/feature_tests.c"
             ex="false"
             tool="0"
             flavor2="10">
         <cTool flags="2">
-          <incDir>
-            <pElem>../build/CMakeFiles/CMakeTmp</pElem>
-          </incDir>
         </cTool>
       </item>
       <item path="../build/CMakeFiles/feature_tests.cxx"
@@ -93,9 +100,6 @@
             tool="1"
             flavor2="11">
         <ccTool flags="1">
-          <incDir>
-            <pElem>../build/CMakeFiles/CMakeTmp</pElem>
-          </incDir>
         </ccTool>
       </item>
       <item path="../src/main.cpp" ex="false" tool="1" flavor2="8">
@@ -109,12 +113,12 @@
       <item path="/usr/share/cmake-3.5/Modules/CMakeCCompilerABI.c"
             ex="false"
             tool="0"
-            flavor2="0">
+            flavor2="2">
       </item>
       <item path="/usr/share/cmake-3.5/Modules/CMakeCXXCompilerABI.cpp"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
       </item>
       <folder path="0">
         <ccTool>
@@ -123,12 +127,14 @@
           </incDir>
         </ccTool>
       </folder>
-      <folder path="usr/share/cmake-3.5/Modules">
-        <cTool>
+      <folder path="CMakeFiles">
+        <ccTool>
           <incDir>
             <pElem>../build/CMakeFiles/CMakeTmp</pElem>
           </incDir>
-        </cTool>
+        </ccTool>
+      </folder>
+      <folder path="Modules">
         <ccTool>
           <incDir>
             <pElem>../build/CMakeFiles/CMakeTmp</pElem>
