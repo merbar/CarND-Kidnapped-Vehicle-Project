@@ -20,7 +20,7 @@ using namespace std;
 int main() {
 	
     // parameters related to grading.
-    int time_steps_before_lock_required = 1; // number of time steps before accuracy is checked by grader.
+    int time_steps_before_lock_required = 100; // number of time steps before accuracy is checked by grader.
     double max_runtime = 45; // Max allowable runtime to pass [sec]
     double max_translation_error = 1; // Max allowable translation error to pass [m]
     double max_yaw_error = 0.05; // Max allowable yaw error [rad]
@@ -73,6 +73,7 @@ int main() {
 
     // Run particle filter!
     int num_time_steps = position_meas.size();
+    //int num_time_steps = 3;
     ParticleFilter pf;
     double total_error[3] = {0,0,0};
     double cum_mean_error[3] = {0,0,0};
@@ -135,6 +136,9 @@ int main() {
 
             // Print the cumulative weighted error
             cout << "Cumulative mean weighted error: x " << cum_mean_error[0] << " y " << cum_mean_error[1] << " yaw " << cum_mean_error[2] << endl;
+            cout << "Best = X: " << best_particle.x << " Y: " << best_particle.y << " T: " << best_particle.theta << endl;
+            cout << "GT   = X: " << gt[i].x << " Y: " << gt[i].y << " T: " << gt[i].theta << endl;
+            
 
             // If the error is too high, say so and then exit.
             if (i >= time_steps_before_lock_required) {
