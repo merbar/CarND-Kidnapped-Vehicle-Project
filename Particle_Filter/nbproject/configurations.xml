@@ -67,11 +67,6 @@
           <buildCommand>./build.sh</buildCommand>
           <cleanCommand>./clean.sh</cleanCommand>
           <executablePath>../build/particle_filter</executablePath>
-          <cTool>
-            <incDir>
-              <pElem>../build/CMakeFiles/CMakeTmp</pElem>
-            </incDir>
-          </cTool>
         </makeTool>
         <preBuild>
           <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
@@ -93,6 +88,9 @@
             tool="0"
             flavor2="10">
         <cTool flags="2">
+          <incDir>
+            <pElem>../build/CMakeFiles/CMakeTmp</pElem>
+          </incDir>
         </cTool>
       </item>
       <item path="../build/CMakeFiles/feature_tests.cxx"
@@ -100,6 +98,9 @@
             tool="1"
             flavor2="11">
         <ccTool flags="1">
+          <incDir>
+            <pElem>../build/CMakeFiles/CMakeTmp</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="../src/main.cpp" ex="false" tool="1" flavor2="8">
@@ -127,14 +128,12 @@
           </incDir>
         </ccTool>
       </folder>
-      <folder path="CMakeFiles">
-        <ccTool>
+      <folder path="Modules">
+        <cTool>
           <incDir>
             <pElem>../build/CMakeFiles/CMakeTmp</pElem>
           </incDir>
-        </ccTool>
-      </folder>
-      <folder path="Modules">
+        </cTool>
         <ccTool>
           <incDir>
             <pElem>../build/CMakeFiles/CMakeTmp</pElem>
