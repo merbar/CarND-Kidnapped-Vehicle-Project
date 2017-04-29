@@ -53,6 +53,10 @@ inline double dist(double x1, double y1, double x2, double y2) {
 	return sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
 }
 
+inline double distSquared(const double x1, const double y1, const double x2, const double y2) {
+	return ((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
+}
+
 inline double * getError(double gt_x, double gt_y, double gt_theta, double pf_x, double pf_y, double pf_theta) {
 	static double error[3];
 	error[0] = fabs(pf_x - gt_x);
