@@ -9,16 +9,6 @@
     </data>
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/home/merbar/git/CarND-Kidnapped-Vehicle-Project/data/control_data.txt</file>
-            <file>file:/home/merbar/git/CarND-Kidnapped-Vehicle-Project/src/main.cpp</file>
-            <file>file:/home/merbar/git/CarND-Kidnapped-Vehicle-Project/src/helper_functions.h</file>
-            <file>file:/home/merbar/git/CarND-Kidnapped-Vehicle-Project/data/observation/observations_000001.txt</file>
-            <file>file:/home/merbar/git/CarND-Kidnapped-Vehicle-Project/src/particle_filter.cpp</file>
-            <file>file:/home/merbar/git/CarND-Kidnapped-Vehicle-Project/src/map.h</file>
-            <file>file:/home/merbar/git/CarND-Kidnapped-Vehicle-Project/data/map_data.txt</file>
-            <file>file:/home/merbar/git/CarND-Kidnapped-Vehicle-Project/data/gt_data.txt</file>
-            <file>file:/home/merbar/git/CarND-Kidnapped-Vehicle-Project/src/particle_filter.h</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
