@@ -116,6 +116,7 @@ int main() {
             // Update the weights and resample
             pf.updateWeights(sensor_range, sigma_landmark, noisy_observations, map);
             pf.resample();
+            pf.write("pf_particles.txt");  
 
             // Calculate and output the average weighted error of the particle filter over all time steps so far.
             vector<Particle> particles = pf.particles;
@@ -175,7 +176,7 @@ int main() {
     else {
             cout << "Your runtime " << runtime << " is larger than the maximum allowable runtime, " << max_runtime << endl;
             return -1;
-    }
+    }          
     return 0;
 }
 
