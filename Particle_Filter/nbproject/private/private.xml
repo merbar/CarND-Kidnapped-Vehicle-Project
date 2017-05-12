@@ -10,8 +10,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/home/merbar/git/CarND-Kidnapped-Vehicle-Project/src/particle_filter.cpp</file>
             <file>file:/home/merbar/git/CarND-Kidnapped-Vehicle-Project/src/particle_filter.h</file>
+=======
+            <file>file:/home/merbar/git/CarND-Kidnapped-Vehicle-Project/src/main.cpp</file>
+            <file>file:/home/merbar/git/CarND-Kidnapped-Vehicle-Project/src/particle_filter.cpp</file>
+>>>>>>> 3728a77f31f6ddee038e779316b906f6c60ec38b
         </group>
     </open-files>
 </project-private>
