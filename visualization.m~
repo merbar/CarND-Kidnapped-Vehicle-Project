@@ -27,6 +27,9 @@ clear particles_per_frame index i j particle_x particle_y particle_theta ar_size
 
 %F(frames) = struct('cdata',[],'colormap',[]);
 
+tmp = getframe(gcf);
+[im,map] = rgb2ind(f.cdata,256,'nodither');
+
 i = 1;
 interval = 4;
 j = 1;
@@ -43,6 +46,7 @@ while i < 800
     legend('vehicle','landmarks','particles','Location','southeast');
     drawnow;
     F(j) = getframe(gcf);
+    im(:,:,1,j) = rgb2ind(F.cdata,map,'nodither');
     
     hold off;
     i = i + interval;
@@ -59,3 +63,4 @@ open(v);
 writeVideo(v,F);
 close(v);
 
+imwrite(im,map,'pf_visualization.gif','DelayTime',0,'LoopCount',inf)
