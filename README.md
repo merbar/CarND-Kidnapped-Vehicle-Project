@@ -1,7 +1,7 @@
 # Particle Filter
 ## Self-Driving Car Engineer Nanodegree Program
 
-Implementation of a 2 dimensional particle filter in C++. The particle filter is given a map and some initial localization information (analogous to what a GPS would provide). At each time step the filter receives observation and control data. 
+Implementation of a two-dimensional particle filter in C++. The particle filter is given a map and some initial localization information (analogous to what a GPS would provide). At each time step the filter receives observation and control data. 
 
 ## Visualization of result
 Number of particles: 20  
