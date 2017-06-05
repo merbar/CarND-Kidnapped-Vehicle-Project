@@ -155,10 +155,10 @@ void ParticleFilter::resample() {
     std::uniform_real_distribution<double> dis(0, 1);
     std::vector<Particle> resampled_particles;
     for (int i=0; i<particles.size(); i++) {
-        double rand = dis(gen);
+        double rand_num = dis(gen);
         double particle_weights = 0.0;
         int j = 0;
-        while (particle_weights < rand) {
+        while (particle_weights < rand_num) {
             // shouldn't happen, but make sure we don't go out of bounds
             if (j >= particles.size())
               j = 0;

@@ -1,13 +1,19 @@
 # Particle Filter
 ## Self-Driving Car Engineer Nanodegree Program
 
-Implementation of a 2 dimensional particle filter in C++. The particle filter is given a map and some initial localization information (analogous to what a GPS would provide). At each time step the filter receives observation and control data. 
+Implementation of a two-dimensional particle filter in C++. The particle filter is given a map and some initial localization information (analogous to what a GPS would provide). At each time step the filter receives observation and control data. 
 
 ## Visualization of result
 Number of particles: 20  
 
 ![visualization](pf_visualization.gif)  
 Matlab script is `visualization.m`
+
+## Landmark association
+I am using simple nearest-neighbor association to assign a landmark to a measurement
+
+## Resampling strategy
+Resampling is carried out with replacement. It is simply based on a uniformly generated random number between 0 and 1 - with the combined particle's weights adding up to 1 as well. The list of particles is traversed until the sum of all weights is equal or greater than the random number.
 
 ## Running the Code
 Once you have this repository on your machine, `cd` into the repository's root directory and run the following commands from the command line:
