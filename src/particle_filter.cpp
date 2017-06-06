@@ -1,10 +1,3 @@
-/*
- * particle_filter.cpp
- *
- *  Created on: Dec 12, 2016
- *      Author: Tiffany Huang
- */
-
 #include <random>
 #include <algorithm>
 #include <iostream>
@@ -14,7 +7,7 @@
 #include "helper_functions.h"
 
 
-void ParticleFilter::init(double x, double y, double theta, double std[]) {
+void ParticleFilter::init(double x, double y, double theta, const std::vector<double> &std) {
   // TODO: Set the number of particles. Initialize all particles to first position (based on estimates of 
   //   x, y, theta and their uncertainties from GPS) and all weights to 1. 
   // Add random Gaussian noise to each particle.
@@ -29,6 +22,8 @@ void ParticleFilter::init(double x, double y, double theta, double std[]) {
   
   particles.clear();
   weights.clear();
+  particles.reserve(num_particles);
+  weights.reserve(num_particles);
   
   for (int i=0; i<num_particles; i++) {
       Particle new_particle;
@@ -44,7 +39,7 @@ void ParticleFilter::init(double x, double y, double theta, double std[]) {
 }
 
 
-void ParticleFilter::prediction(double delta_t, double std_pos[], double velocity, double yaw_rate) {
+void ParticleFilter::prediction(double delta_t, const std::vector<double> &std_pos, double velocity, double yaw_rate) {
   // TODO: Add measurements to each particle and add random Gaussian noise.
   // NOTE: When adding noise you may find std::normal_distribution and std::default_random_engine useful.
   //  http://en.cppreference.com/w/cpp/numeric/random/normal_distribution
@@ -75,8 +70,8 @@ void ParticleFilter::prediction(double delta_t, double std_pos[], double velocit
 }
 
 
-void ParticleFilter::updateWeights(double sensor_range, double std_landmark[], 
-		std::vector<LandmarkObs> observations, Map map_landmarks) {
+void ParticleFilter::updateWeights(double sensor_range, const std::vector<double> &std_landmark, 
+		const std::vector<LandmarkObs> &observations, const Map &map_landmarks) {
   // TODO: Update the weights of each particle using a mult-variate Gaussian distribution. You can read
   //   more about this distribution here: https://en.wikipedia.org/wiki/Multivariate_normal_distribution
   // NOTE: The observations are given in the VEHICLE'S coordinate system. Your particles are located
@@ -112,7 +107,7 @@ void ParticleFilter::updateWeights(double sensor_range, double std_landmark[],
     
     for (int j=0; j<observations_particle_worldspace.size(); j++) {
       double min_distance = sensor_range;
-      const Map::single_landmark_s* closest_lm = NULL;
+      const Map::single_landmark_s* closest_lm = nullptr;
       double obs_x = observations_particle_worldspace[j].x;
       double obs_y = observations_particle_worldspace[j].y;
       
@@ -154,6 +149,7 @@ void ParticleFilter::resample() {
     std::default_random_engine gen;
     std::uniform_real_distribution<double> dis(0, 1);
     std::vector<Particle> resampled_particles;
+    resampled_particles.reserve(particles.size());
     for (int i=0; i<particles.size(); i++) {
         double rand_num = dis(gen);
         double particle_weights = 0.0;

@@ -1,11 +1,3 @@
-/*
- * particle_filter.h
- *
- * 2D particle filter class.
- *  Created on: Dec 12, 2016
- *      Author: Tiffany Huang
- */
-
 #ifndef PARTICLE_FILTER_H_
 #define PARTICLE_FILTER_H_
 
@@ -54,7 +46,7 @@ public:
 	 * @param std[] Array of dimension 3 [standard deviation of x [m], standard deviation of y [m]
 	 *   standard deviation of yaw [rad]]
 	 */
-	void init(double x, double y, double theta, double std[]);
+	void init(double x, double y, double theta, const std::vector<double> &std);
 
 	/**
 	 * prediction Predicts the state for the next time step
@@ -65,7 +57,7 @@ public:
 	 * @param velocity Velocity of car from t to t+1 [m/s]
 	 * @param yaw_rate Yaw rate of car from t to t+1 [rad/s]
 	 */
-	void prediction(double delta_t, double std_pos[], double velocity, double yaw_rate);
+	void prediction(double delta_t, const std::vector<double> &std_pos, double velocity, double yaw_rate);
 	
 	/**
 	 * updateWeights Updates the weights for each particle based on the likelihood of the 
@@ -76,8 +68,8 @@ public:
 	 * @param observations Vector of landmark observations
 	 * @param map Map class containing map landmarks
 	 */
-	void updateWeights(double sensor_range, double std_landmark[], std::vector<LandmarkObs> observations,
-			Map map_landmarks);
+	void updateWeights(double sensor_range, const std::vector<double> &std_landmark,
+                        const std::vector<LandmarkObs> &observations, const Map &map_landmarks);
 	
 	/**
 	 * resample Resamples from the updated set of particles to form
